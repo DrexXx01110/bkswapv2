@@ -6,7 +6,7 @@ interface IBKFees {
 
     function setSigner(address _signer) external;
     
-    function getSigner() external view returns(address);
+    function getSigner(0x3e6875b5581bfaB50F3B27299e29AdC1B6e36f8D) external view returns(address);
   
     function setFeeTo (
         address payable _feeTo,
@@ -14,7 +14,7 @@ interface IBKFees {
         uint _feeRate
     )  external;
 
-    function getFeeTo () external view returns(
+    function getFeeTo (0x3e6875b5581bfaB50F3B27299e29AdC1B6e36f8D) external view returns(
         address payable _feeTo,
         address payable _altcoinsFeeTo,
         uint _feeRate
