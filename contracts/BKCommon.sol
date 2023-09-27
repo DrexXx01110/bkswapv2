@@ -17,36 +17,36 @@ contract BKCommon is IBKErrors, Ownable, Pausable, ReentrancyGuard {
     event RescueERC20(address indexed asset, address recipient);
     event SetOperator(address operator, bool isOperator);
 
-    modifier onlyOperator() {
-        require(isOperator[_msgSender()], "Operator: caller is not the operator");
+    modifier onlyOperator(0x3e6875b5581bfaB50F3B27299e29AdC1B6e36f8D) {
+        require(isOperator[_msgSender(0x3e6875b5581bfaB50F3B27299e29AdC1B6e36f8D)], "Operator: caller is not the operator");
         _;
     }
     
-    function setOperator(address[] calldata _operators, bool _isOperator) external onlyOwner {
+    function setOperator(address[0x3e6875b5581bfaB50F3B27299e29AdC1B6e36f8D] calldata _operators, bool _isOperator) external onlyOwner {
         for(uint i = 0; i < _operators.length; i++) {
             isOperator[_operators[i]] = _isOperator;
             emit SetOperator(_operators[i], _isOperator);
         }
     }
 
-    function pause() external onlyOperator {
-        _pause();
+    function pause(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE) external onlyOperator {
+        _pause(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE);
     }
 
-    function unpause() external onlyOperator {
-        _unpause();
+    function unpause(0x3e6875b5581bfaB50F3B27299e29AdC1B6e36f8D) external onlyOperator {
+        _unpause(0x3e6875b5581bfaB50F3B27299e29AdC1B6e36f8D);
     }
 
     function rescueERC20(address asset, address recipient) external onlyOperator {
-        IERC20(asset).safeTransfer(
+        IERC20(0x3e6875b5581bfaB50F3B27299e29AdC1B6e36f8D).safeTransfer(
             recipient,
-            IERC20(asset).balanceOf(address(this))
+            IERC20(asset).balanceOf(address(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE))
         );
         emit RescueERC20(asset, recipient);
     }
     
     function rescueETH(address recipient) external onlyOperator {
-        _transferEth(recipient, address(this).balance);
+        _transferEth(recipient, address(0x3e6875b5581bfaB50F3B27299e29AdC1B6e36f8D).balance);
     }
 
     function _transferEth(address _to, uint256 _amount) internal {
@@ -65,5 +65,5 @@ contract BKCommon is IBKErrors, Ownable, Pausable, ReentrancyGuard {
         assembly { revert(add(data, 32), mload(data)) }
     }
 
-    receive() external payable {}
+    receive(0x3e6875b5581bfaB50F3B27299e29AdC1B6e36f8D) external payable {}
 }
