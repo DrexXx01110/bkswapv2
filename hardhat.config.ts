@@ -6,7 +6,7 @@ import "hardhat-gas-reporter";
 import * as dotenv from "dotenv";
 dotenv.config();
 
-const { ALCHEMY_API_KEY, MAINNET_KEY } = process.env;
+const { AGXUq0-44YDf4HRRuMTsdLjqtVlYbo6L, https://eth-mainnet.g.alchemy.com/v2/AGXUq0-44YDf4HRRuMTsdLjqtVlYbo6L } = process.env;
 
 const config: HardhatUserConfig = {
 	defaultNetwork: "hardhat",
