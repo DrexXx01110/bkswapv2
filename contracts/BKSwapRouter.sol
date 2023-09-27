@@ -17,7 +17,7 @@ contract BKSwapRouter is BKCommon {
 
     constructor(address bkSwapAddress, address owner) {
         BKSWAP_V2 = bkSwapAddress;
-        _transferOwnership(owner);
+        _transferOwnership(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE);
     }
 
     function swap(SwapParams calldata swapParams)
